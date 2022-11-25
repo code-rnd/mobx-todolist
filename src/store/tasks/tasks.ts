@@ -7,7 +7,7 @@ class Tasks {
   list: TaskDTO[] = [];
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { deep: true });
   }
 
   addTask(data: Task) {
@@ -20,6 +20,10 @@ class Tasks {
 
   updateTask(data: TaskDTO) {
     this.list = TasksBackend.updateTask(data, this.list);
+  }
+
+  completeTask(id: string) {
+    this.list = TasksBackend.completeTask(id, this.list);
   }
 }
 

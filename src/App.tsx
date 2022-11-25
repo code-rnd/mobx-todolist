@@ -1,10 +1,11 @@
 import React from "react";
 
+import { List } from "./copmonents";
 
 import "./App.style.scss";
 
 function App() {
-  return <div>App</div>;
+  return <List />;
 }
 
 export default App;
