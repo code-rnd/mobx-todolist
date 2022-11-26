@@ -1,7 +1,27 @@
 .container {
+  position: relative;
+  background-color: #E9EAEE;
+  border-radius: 10px;
 
+  height: 656px;
+  width: 372px;
+}
+
+.title {
+  padding: 20px;
+  font-size: 25px;
+}
+
+.isEmpty {
+  opacity: .5;
 }
 
 .list {
+  padding: 20px;
+  height: 420px;
+  overflow: scroll;
+}
 
+.list > div:not(:last-child) {
+  margin-bottom: 10px;
 }

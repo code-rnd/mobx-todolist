@@ -19,9 +19,15 @@ export const Controls: FC = observer(() => {
         type="text"
         value={value}
         onChange={({ currentTarget }) => setValue(currentTarget.value)}
+        placeholder="_"
+        onKeyPress={(e) => {
+          if (e.code === "Enter") {
+            addHandler();
+          }
+        }}
       />
       <button disabled={!value} onClick={addHandler}>
-        +
+        send
       </button>
     </div>
   );

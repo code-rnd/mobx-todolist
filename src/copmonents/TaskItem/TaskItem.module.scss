@@ -1,7 +1,47 @@
 .container {
+  background-color: #FFFFFF;
+  border-radius: 10px;
 
+  display: grid;
+  grid-template-columns: 15% 75% 10%;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  transition: .5s all;
+  box-shadow: 0 0 18px -10px rgb(0,0,0.75);
 }
 
-.isNotDone {
-  background-color: dodgerblue;
+.container:hover {
+  transition: .5s all;
+  box-shadow: 0 0 5px -10px rgb(0,0,0.75);
+}
+
+
+.icon {
+  min-height: 25px;
+  min-width: 25px;
+  max-height: 25px;
+  max-width: 25px;
+
+  border-radius: 5px;
+
+  background-color: #BEE3FC;
+}
+
+.checkbox {
+  min-height: 15px;
+  min-width: 15px;
+  max-height: 15px;
+  max-width: 15px;
+  border-radius: 25px;
+  transition: .3s all;
+
+  box-sizing: border-box;
+  border: 1.5px solid #57BDF8;
+}
+
+.isDone {
+  background-color: #57BDF8;
 }

@@ -1,10 +1,11 @@
 import { makeAutoObservable } from "mobx";
 import { Task, TaskDTO } from "./tasks.models";
 import { TasksBackend } from "../../backend";
+import { TasksMocked } from "../../shared";
 
 class Tasks {
   isLoading = false;
-  list: TaskDTO[] = [];
+  list: TaskDTO[] = TasksMocked;
 
   constructor() {
     makeAutoObservable(this, {}, { deep: true });
@@ -14,16 +15,12 @@ class Tasks {
     this.list = TasksBackend.addTask(data, this.list);
   }
 
-  removeTask(id: string) {
-    this.list = TasksBackend.removeTask(id, this.list);
-  }
-
-  updateTask(data: TaskDTO) {
-    this.list = TasksBackend.updateTask(data, this.list);
-  }
-
   completeTask(id: string) {
     this.list = TasksBackend.completeTask(id, this.list);
+  }
+
+  getTotal() {
+    return this.list.length || 0;
   }
 }
 
